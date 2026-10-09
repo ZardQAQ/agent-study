@@ -12,16 +12,10 @@ npm install --prefix server
 npm install --prefix web
 ```
 
-复制环境变量文件，并填入自己的 DeepSeek 密钥：
-
-```bash
-copy .env.example .env
-```
-
-`.env` 内容如下：
+仓库里的 `.env` 只有占位符。运行前把 `DEEPSEEK_API_KEY` 改成你自己的 DeepSeek 密钥：
 
 ```
-DEEPSEEK_API_KEY=你的密钥
+DEEPSEEK_API_KEY="写你自己的API KEY"
 DEEPSEEK_MODEL=deepseek-chat
 ```
 
@@ -105,6 +99,6 @@ SELECT * FROM orders WHERE user_id = ? ORDER BY created_at DESC LIMIT 50
 
 `POST /api/refunds/:draftId/submit` 只在用户点确认后调用。成功后草稿变为 `submitted`，订单变为 `refunded`。
 
-## 密钥不要提交
+## 密钥
 
-`.env` 已在 `.gitignore` 里。这个仓库是公开的，不要把真实的 `DEEPSEEK_API_KEY` 推上去。密钥只留在本机。
+仓库里的 `.env` 不含真实密钥。填入自己的 key 之后，不要把真实密钥再推到这个公开仓库。
