@@ -1,0 +1,10 @@
+{
+  "name": "agent-study",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,green \"npm run dev --prefix server\" \"npm run dev --prefix web\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

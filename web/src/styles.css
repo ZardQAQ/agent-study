@@ -1,0 +1,428 @@
+:root {
+  color: #1e1a16;
+  background: #efe8dc;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto minmax(420px, 1fr) auto;
+}
+
+.topbar,
+.orders-head,
+.trace-head,
+.bubble-body span,
+.eyebrow {
+  letter-spacing: 0;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: end;
+  padding: 22px 28px 16px;
+  border-bottom: 1px solid #e2d8c8;
+  background: #f7f3eb;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: #0e6b52;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 680;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.lede {
+  max-width: 460px;
+  color: #5f574e;
+  line-height: 1.55;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.85fr);
+  min-height: 0;
+}
+
+.chat,
+.trace,
+.orders {
+  min-height: 0;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 20px 18px;
+  background: #f7f3eb;
+}
+
+.scenarios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.scenarios button,
+.composer button,
+.confirm-actions button,
+.orders-tools button {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: #0e6b52;
+  color: #f7f3eb;
+}
+
+.scenarios button:disabled,
+.composer button:disabled,
+.confirm-actions button:disabled,
+.orders-tools button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+button.ghost,
+.orders-tools button.ghost {
+  background: transparent;
+  color: #1e1a16;
+  border: 1px solid #cfc3b2;
+}
+
+.banner {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f8e4e0;
+  color: #8d2f2f;
+}
+
+.messages {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 4px;
+}
+
+.empty,
+.pending,
+.trace-empty,
+.refund-empty {
+  color: #6d645b;
+  line-height: 1.6;
+}
+
+.bubble {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 680px;
+}
+
+.bubble.user {
+  align-self: flex-end;
+}
+
+.bubble-body {
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: #fffdf8;
+  color: inherit;
+}
+
+.bubble.user .bubble-body {
+  background: #173f34;
+  color: #f7f3eb;
+}
+
+.bubble.selected .bubble-body {
+  border-color: #0e6b52;
+}
+
+.bubble-body span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.bubble-body p {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.confirm-card {
+  border: 1px solid #efd3a8;
+  border-radius: 16px;
+  padding: 14px;
+  background: #fff8ee;
+}
+
+.confirm-kicker {
+  color: #9a5b12;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.confirm-card h3 {
+  margin: 4px 0 10px;
+  font-size: 18px;
+}
+
+.confirm-card pre,
+.trace pre {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  overflow: auto;
+  border-radius: 10px;
+  background: #1e1a16;
+  color: #f6f1e8;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.confirm-note {
+  margin-top: 10px;
+  color: #5f574e;
+}
+
+.confirm-note.danger {
+  color: #8d2f2f;
+}
+
+.composer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: end;
+}
+
+.composer textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #e2d8c8;
+  border-radius: 14px;
+  padding: 12px;
+  background: #fffdf8;
+  color: #1e1a16;
+}
+
+.trace {
+  overflow: auto;
+  padding: 18px 18px 24px;
+  background: #221e1a;
+  color: #f6f1e8;
+}
+
+.trace .eyebrow {
+  color: #8fd0b8;
+}
+
+.tracking,
+.trace-hint,
+.trace-empty {
+  color: #c8bfb3;
+}
+
+.tracking {
+  margin-top: 6px;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 12px;
+}
+
+.trace-list {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.trace-step {
+  padding-left: 12px;
+  border-left: 2px solid #3d362f;
+}
+
+.trace-kicker {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.trace-kicker span {
+  color: #e0b15a;
+  font-size: 12px;
+}
+
+.trace-hint {
+  margin-top: 2px;
+  font-size: 12px;
+}
+
+.orders {
+  padding: 16px 20px 22px;
+  border-top: 1px solid #e2d8c8;
+  background: #fffdf8;
+}
+
+.orders-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+}
+
+.orders-tools {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+}
+
+.orders-tools label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #6d645b;
+  font-size: 12px;
+}
+
+select {
+  border: 1px solid #e2d8c8;
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: #fff;
+  color: #1e1a16;
+}
+
+.table-wrap {
+  overflow: auto;
+  margin-top: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid #eee4d6;
+  white-space: nowrap;
+}
+
+th {
+  color: #6d645b;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.pill {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 2px 8px;
+  background: #e7f5ef;
+  color: #0e6b52;
+  font-size: 12px;
+}
+
+.pill.status-refunded,
+.pill.status-submitted {
+  background: #f8e4e0;
+  color: #8d2f2f;
+}
+
+.pill.status-pending_confirm {
+  background: #fff1dc;
+  color: #9a5b12;
+}
+
+.refund-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.refund-list li,
+.refund-empty {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #f7f3eb;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .app {
+    grid-template-rows: auto auto auto;
+  }
+
+  .topbar,
+  .orders-head,
+  .workspace {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trace {
+    min-height: 320px;
+  }
+}
